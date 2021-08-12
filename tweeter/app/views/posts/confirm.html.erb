@@ -1,5 +1,5 @@
 <h3>Confirmez votre tweet</h3>
-<%= form_with(model: @post, local: true) do |form| %>
+<%= form_with(model: @post, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p><%= @post.content %></p>
   <%= form.submit  "Confirmez" %>

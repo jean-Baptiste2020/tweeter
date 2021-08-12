@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
     def confirm
         @post = Post.new(posts_params)
-      end
+    end
 
     def edit
        @post=Post.find(params[:id])
