@@ -16,11 +16,10 @@ ActiveRecord::Schema.define(version: 2021_08_05_115551) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.string "nom"
-    t.string "title"
-    t.string "content", limit: 140, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "content"
+    t.string "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
   end
 
 end

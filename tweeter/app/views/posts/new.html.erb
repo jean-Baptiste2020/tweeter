@@ -31,24 +31,17 @@
                 <h2>This is Tweeter</h2>
                 <p>Tweeter Application Web</p>
                 <ul class="actions">
-                <%= form_with model: @post, local:true do |form| %>
+                <%= form_with(model: @post, local: true ,url: confirm_posts_path ) do |form| %>
                     <% if @post.errors.any? %>
-                      <h2> Une erreur est survenue </h2>
-                      <ul>
-                      <% @post.errors.full_messages.each do |msg| %>
-                          <li> <%= msg %> </li>
-                       <% end %>
-                       <br/><br/>
-                      </ul>
+                        <div id="error_explanation">
+                        <h3 style="color:red;"><%= @post.errors.count %>Il y a des erreurs.</h3>
+                        <ul>
+                        <% @post.errors.full_messages.each do |msg| %>
+                            <li style="color:red;"><%= msg %></li>
+                        <% end %>
+                        </ul>
+                        </div>
                     <% end %>
-                    <li>
-                      <%= form.label :nom %>
-                      <%= form.text_field :nom %>
-                    </li><br/><br/>
-                    <li>
-                      <%= form.label :title %>
-                      <%= form.text_field :title %>
-                    </li><br/><br/>
                     <li>
                       <%= form.label :content %>
                       <%= form.text_area :content %>

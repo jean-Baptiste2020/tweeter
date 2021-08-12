@@ -28,12 +28,8 @@
         <!-- Banner -->
         <section id="banner">
             <div class="inner">
-                <p>La liste des tweets</p>
-                
-                <br/><br/>
-                <h2> <%= @post.title %> </h2>
-                <div> <%= @post.content %> </div>
-                <div> <strong style="color: maroon;">publié par : </strong> <%= @post.nom %> </div>
+                <div style="border: 1px black solid; box-shadow: 6px 6px 6px blue;"> <%= @post.content %></div>
+                <br/>
                 <div> <%= link_to "retournez aux tweets", posts_path() %></div>
                 <hr/>
             </div>

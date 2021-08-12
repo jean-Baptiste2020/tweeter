@@ -11,6 +11,10 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
+    def confirm
+        @post = Post.new(posts_params)
+      end
+
     def edit
        @post=Post.find(params[:id])
     end
@@ -20,7 +24,7 @@ class PostsController < ApplicationController
         @post=Post.new(posts_params)
      
         if @post.save
-        redirect_to posts_path
+        redirect_to posts_path, notice: "J'ai éffectué un tweet ♣"
         else
            render :new
         end
@@ -29,7 +33,7 @@ class PostsController < ApplicationController
     def update
         @post=Post.find(params[:id])
         if @post.update(posts_params)
-           redirect_to posts_path
+           redirect_to posts_path, notice: "J'ai Modifié le tweet ♣"
         else
            render :new
         end
@@ -39,7 +43,7 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
-        redirect_to posts_path
+        redirect_to posts_path, notice: "J'ai Supprimé le tweet !!!"
     end
 
 

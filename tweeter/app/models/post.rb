@@ -1,5 +1,3 @@
 class Post < ApplicationRecord
-    validates :nom, presence: true
-    validates  :content, presence: true
-    validates  :title, presence: true
+    validates  :content, length: {in: 1..140} , presence: true
 end
